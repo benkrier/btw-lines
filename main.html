@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Between Lines</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<h2>Between Lines Prototype</h2>
+<p>Click on the buttons inside the tabbed menu:</p>
+
+<div class="tab">
+  <button class="tablinks" onclick="openText(event, 'Orig')" id="defaultOpen">Original Text</button>
+  <button class="tablinks" onclick="openText(event, 'Altered')">Altered Text</button>
+</div>
+
+<div id="Orig" class="tabcontent active">
+  <h3>Paste Original Text in Area Below</h3>
+  <textarea rows="25" cols="50" id="originalText" wrap="hard"></textarea>
+  <button type="button" onclick="ApplyLineBreaks('originalText');">Alter Text</button>
+</div>
+
+<div id="Altered" class="tabcontent">
+  <h3>Altered Text Displayed below</h3>
+  <div id="alteredText"></div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
