@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width">
   <title>Between Lines</title>
   <link rel="stylesheet" href="main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="my_jquery.js"></script>
+  <script>
+    $(document).ready(function(){
+      $(".boldTrigger").click(function() { //boldTrigger being the element initiating the trigger
+          $(".originalText").toggleClass("bold");  //text being the element to where applied to it.
+      });
+    });
+  </script>
+
 </head>
 <body>
 <h2>Between Lines Prototype</h2>
@@ -23,9 +33,13 @@
 
 <div id="Altered" class="tabcontent">
   <h3>Altered Text Displayed Below</h3>
-  <p id="alteredText"></p>
+  <div id="alteredText"><p></p></div>
+  <button type="button" onclick="addSpace()">Increase word spacing</button>
+  <button type="button" onclick="subtractSpace()">Decrease word spacing</button>
 </div>
 
 <script src="main.js"></script>
+<script src="my_jquery.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 </html>

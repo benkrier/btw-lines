@@ -16,6 +16,7 @@ document.getElementById("defaultOpen").click();
 
 function ApplyLineBreaks(strTextarea) {
     var oTextarea = document.getElementById(strTextarea);
+
     if (oTextarea.wrap) {
         oTextarea.setAttribute("wrap", "off");
     }
@@ -50,9 +51,9 @@ function ApplyLineBreaks(strTextarea) {
     }
     // oTextarea.setAttribute("wrap", "");
 
-    x = oTextarea.value.replace(new RegExp("\\n", "g"), "<br />");
+    x = oTextarea.value.replace(new RegExp("\\n", "g"), "</p><p>");
 
-    lines = x.split('<br />');
+    lines = x.split('</p><p>');
 
     revLines = [];
     for (e = 0; e < lines.length; e++) {
@@ -64,14 +65,18 @@ function ApplyLineBreaks(strTextarea) {
     }
 
     console.log(revLines);
-    y = revLines.join('<br />');
+
+
+    y = revLines.join('</p><p>');
 
     document.getElementById("alteredText").innerHTML = y;
 }
 
 
+function addSpace() {
+    document.getElementById("alteredText").style.wordSpacing = "15px";
+}
 
-//    x = x.split(/\b/).reverse().join('');
-
-//    document.getElementById("alteredText").innerHTML = oTextarea.value;
-//}
+function subtractSpace() {
+    document.getElementById("alteredText").style.wordSpacing = "2px";
+}
